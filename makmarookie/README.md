@@ -1,6 +1,11 @@
-# Add your connection string into your application code
+## Add your connection string into your application code
 ```bash
 mongodb+srv://admin:admin@makmarookiehackathon.yhb296j.mongodb.net/?retryWrites=true&w=majority
+```
+
+## connect mongodb from mongosh
+```bash
+mongosh "mongodb+srv://makmarookiehackathon.yhb296j.mongodb.net/MakmarookieHackathon" --apiVersion 1 --username admin --password admin
 ```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
