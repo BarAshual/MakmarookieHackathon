@@ -3,6 +3,7 @@ import { AppBar, Box, Grid, Toolbar, Typography } from '@mui/material';
 import Info from '../components/soldier/Info.js';
 import { model } from '../models/MandatorySoldier';
 import dbConnect from '../db/dbConnect.js';
+import Link from 'next/link';
 
 export default function Home(props) {
   return (
@@ -20,10 +21,14 @@ export default function Home(props) {
       </AppBar>
       <Grid container rowSpacing={5}>
         {props.data.map(x => 
-          (<Grid item key={x.id} xs={6} justifyContent='center'>
-            <Info soldier={x}>
-            </Info>
-            </Grid>))}
+          (
+            <Grid item key={x.id} xs={6} justifyContent='center'>
+            <Link href={`/soldier/${x.id}`}>
+              <Info soldier={x}>
+              </Info>
+            </Link>
+            </Grid>
+          ))}
       </Grid>
     </Box></>
   )
@@ -45,8 +50,6 @@ export async function getServerSideProps() {
       }))
     }
   }
-
-  // return {
   //   props: {
   //     data: [
   //       {
