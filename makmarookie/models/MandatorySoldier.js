@@ -5,7 +5,11 @@ const MandatorySoldierSchema = new Schema({
     type: Number,
     fullName: String,
     recruitDate: Date,
-    arrivalDate: Date
+    arrivalDate: Date,
+    tasks: [{
+        taskId: {type: mongoose.Schema.Types.ObjectId, ref: 'Task'},
+        isDone: Boolean
+    }]
 });
 
 export const model = mongoose?.models?.MandatorySoldier || mongoose.model('MandatorySoldier', MandatorySoldierSchema);

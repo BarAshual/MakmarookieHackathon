@@ -30,8 +30,8 @@ export default function Info({soldier}) {
                     שם חייל: {soldier.name}
                 </Typography>
                 <Typography>מספר אישי: {soldier.id}</Typography>
-                <Typography>תאריך גיוס: {moment(soldier.recruitDate).format('DD-mm-YY')}</Typography>
-                <Typography>תאריך קליטה: {moment(soldier.arrivalDate).format('DD-mm-YY')}</Typography>
+                <Typography>תאריך גיוס: {moment(soldier.recruitDate).format('DD-MM-YY')}</Typography>
+                <Typography>תאריך קליטה: {moment(soldier.arrivalDate).format('DD-MM-YY')}</Typography>
                 <Typography>קורס: {soldier.course}</Typography>
             </Box>
     </Box>)
