@@ -1,14 +1,13 @@
-import { FormGroup, FormControlLabel, Box, Accordion, AccordionSummary, AccordionDetails, Checkbox } from '@mui/material';
+import { Typography, AppBar, Toolbar, FormGroup, FormControlLabel, Box, Accordion, AccordionSummary, AccordionDetails, Checkbox } from '@mui/material';
 import moment from 'moment';
 
 import Info from '../../components/soldier/Info';
 import dbConnect from '../../db/dbConnect';
-import MandatorySoldier from '../../models/MandatorySoldier';
-import Task from '../../models/Task';
+import {model} from '../../models/MandatorySoldier';
 
 export const getStaticPaths = async () => {
 	await dbConnect();
-	const a = await MandatorySoldier.find({});
+	const a = await model.find({});
 	
 	return {
 		paths: a.map(y => ({params: {id: `${y.id}`}})),
@@ -19,8 +18,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
 	await dbConnect();
 	console.log(params)
-	const soldier = (await MandatorySoldier.find({id: Number(params.id)}))[0];
-	const tasks = await Task.find();
+	const soldier = (await model.find({id: Number(params.id)}))[0];
 
 	return {
 			props: {

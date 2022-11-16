@@ -12,13 +12,6 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ alignItems: 'center' }}>
-        <Toolbar>
-          <Typography variant="h3" component="div">
-            חיילים
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <Grid container rowSpacing={5}>
         {props.data.map(x => 
           (
