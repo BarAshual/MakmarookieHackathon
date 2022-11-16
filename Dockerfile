@@ -1,16 +1,20 @@
+FROM node:10
 
-FROM node:12.2
+# Create app directory
+WORKDIR /usr/app
 
-ENV HOME=/home/app
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-RUN apt-get update && apt-get install htop
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
-COPY makmarookie\package.json makmarookie\package-lock.json $HOME/node_docker/
+# Bundle app source
+COPY . .
 
-WORKDIR $HOME/node_docker
-
-RUN npm install --silent --progress=false
-
-COPY . $HOME/node_docker
+EXPOSE 8080
 
 CMD ["npm", "start"]
