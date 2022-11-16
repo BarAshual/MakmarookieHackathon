@@ -8,4 +8,4 @@ const mandatorySoldierSchema = new Schema({
     arrivalDate: Date
 });
 
-module.exports = mongoose.models.MandatorySoldier || mongoose.model('MandatorySoldier', mandatorySoldierSchema);
+export const model = mongoose?.models?.MandatorySoldier || mongoose.model('MandatorySoldier', mandatorySoldierSchema);
