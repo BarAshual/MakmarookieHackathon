@@ -1,6 +1,5 @@
 import { FormGroup, FormControlLabel, Box, Accordion, AccordionSummary, AccordionDetails, Checkbox } from '@mui/material';
 import Info from '../../components/soldier/Info';
-import {model} from '../../models/MandatorySoldier';
 
 export const getStaticPaths = async () => ({
 	paths: [{params: {id: '8004001'}}],

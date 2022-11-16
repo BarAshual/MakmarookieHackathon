@@ -7,7 +7,7 @@ export default function Info({soldier}) {
     sx={{
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'start'
+        justifyContent: 'center'
     }}>
         <Box 
         sx={{

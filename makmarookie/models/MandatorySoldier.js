@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const mandatorySoldierSchema = new Schema({
+const MandatorySoldierSchema = new Schema({
     id: Number,
     type: Number,
     fullName: String,
@@ -8,4 +8,4 @@ const mandatorySoldierSchema = new Schema({
     arrivalDate: Date
 });
 
-export const model = mongoose?.models?.MandatorySoldier || mongoose.model('MandatorySoldier', mandatorySoldierSchema);
+export const model = mongoose?.models?.MandatorySoldier || mongoose.model('MandatorySoldier', MandatorySoldierSchema);
